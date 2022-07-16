@@ -1,25 +1,8 @@
-let plus = (a, b) => {
-    return a + b; 
-}
+const express = require('express')
+const app = express()
 
-let minus = (a, b) => {
-    return a - b; 
-}
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 
-let division = (a, b) => {
-    return a / b; 
-}
-
-let multiplicity = (a, b) => {
-    return a * b; 
-}
-
-let concatName = (name) => {
-    return `Hello ${name}`; 
-}
-
-
-
-let result = concatName("Test");
-
-console.log(result);
+app.listen(3000)
