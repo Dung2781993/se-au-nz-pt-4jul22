@@ -27,6 +27,10 @@
         text-align: right;
         margin-top: 10px; 
       }
+      #compare-message {
+        font-size: large;
+        font-weight: bolder;
+      }
     </style>
     <title>Exercise</title>
   </head>
@@ -37,13 +41,18 @@
           <div class="row">
             <span>Select your dog</span>
             <div class="col-6">
-              <select class="form-select" id="firstDogList"></select>
+              <select class="form-select" id="firstDogList">
+                <optiom></optiom>
+              </select>
             </div>
             <div class="col-6">
               <select class="form-select" id="secondDogList"></select>
             </div>
-            <div class="col-12 control-button">
-              <button onclick="Compare()" class="btn btn-primary">
+            <div class="col-8">
+              <label id="compare-message"></label>
+            </div>
+            <div class="col-4 control-button">
+              <button onclick="compare()" class="btn btn-primary">
                 Compare
               </button>
             </div>

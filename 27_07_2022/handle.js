@@ -22,7 +22,7 @@ let jsonObject = `
         "breed": "Golden Retriever",
         "breedType": "Purebred",
         "origin": "United Kingdom",
-        "popularity": "3",
+        "popularity": "3", 
         "temperament": ["Intelligent", "Kind", "Friendly", "Confident"],
         "hypoallergenic": "No",
         "intelligence": 4,
@@ -71,7 +71,7 @@ let jsonObject = `
         "breed": "Rottweiler",
         "breedType": "Purebred",
         "origin": "Germany",
-        "popularity": "8",
+        "popularity": "test",
         "temperament": ["Intelligent", "Corageous", "Fearless", "Confident"],
         "hypoallergenic": "No",
         "intelligence": 9,
@@ -107,29 +107,121 @@ let jsonObject = `
         "intelligence": 48,
         "photo": "https://learnwebcode.github.io/json-example/images/cat-2.jpg"
 
+    }, {
+        "breed": "Hellomama2",
+        "breedType": "Purebred",
+        "origin": "Dutch",
+        "popularity": "11",
+        "temperament": ["Playful", "Friendly", "Devoted", "Loyal"],
+        "hypoallergenic": "No",
+        "intelligence": 48,
+        "photo": "https://learnwebcode.github.io/json-example/images/cat-2.jpg"
     }]
 }`;
 
 let bodyData = JSON.parse(jsonObject);
-let data = bodyData.dogBreeds;
+let listDog = bodyData.dogBreeds;
 
-let listDogName = [];
+const GERMANY_DOG = "Purebred";
 
-data.forEach((item, index) => {
-    listDogName.push(item.breed);
-});
+// let firstselectDogList = document.getElementById("firstDogList");
+// for (let i = 0; i <= listDog.length - 1; i++) {
+//   let option = document.createElement("option");
+//   let dog = listDog[i];
+//   option.value = dog.breed;
+//   option.text = dog.breed;
+//   firstselectDogList.appendChild(option);
+// }
 
-let firstselectDogList = document.getElementById("firstDogList");
-let secondselectDogList = document.getElementById("secondDogList");
+// let secondselectDogList = document.getElementById("secondDogList");
+// for (let i = 0; i <= listDog.length - 1; i++) {
+//   let option = document.createElement("option");
+//   let dog = listDog[i];
+//   option.value = dog.breed;
+//   option.text = dog.breed;
+//   secondselectDogList.appendChild(option);
+// }
 
-let addDropDownOption = (dropdown) => {
-  listDogName.forEach((item, index) => {
-    let option = document.createElement("option");
-    option.value = listDogName[index];
-    option.text = listDogName[index];
-    dropdown.appendChild(option);
-  });
+let exampleObj1 = {
+  'school': 'Hello',
+  'street': 'AA'
 };
 
-addDropDownOption(firstselectDogList);
-addDropDownOption(secondselectDogList);
+let exampleObj = {
+  'name': exampleObj1,
+  'age': '17'
+};
+
+
+
+let exampleObj2 = {
+  'name': 'test',
+  'age': '17'
+};
+
+exampleObj.city = "Test";
+
+let arr = [exampleObj, exampleObj1, exampleObj2];
+
+console.log(typeof 1);
+
+console.log(typeof true);
+
+// exampleObj.name = {city: "Test", country: 'AU'};
+
+
+
+
+// let getObjectName = (item) => {
+//   try {
+//     if(typeof item !== 'object') {
+//       throw 'Not Object';
+//     }
+//     return item.name;
+//   } catch (err) {
+//     return err;
+//   }
+// }
+
+
+
+// console.log(getObjectName('Test'));
+
+// let compare = () => {
+//   //Get the first dog
+//   let firstDogSelection = listDog[firstselectDogList.selectedIndex];
+
+//   //Get the second dog
+//   let secondDogSelection = listDog[secondselectDogList.selectedIndex];
+
+//   let stringA = "A";
+
+//   let result = "Your grade is " + stringA;
+
+//   let listStudents = ['A', 'B', 'C'];
+
+//   let finalResult = '';
+//   listStudents.forEach(item => {
+//     let result =  `Student Name is ${item} , `;
+//     finalResult += result;
+//   });
+
+ 
+
+//   if (firstDogSelection === secondDogSelection) {
+//     let message = "Same dog";
+//     document.getElementById("compare-message").innerHTML = message;
+//   }
+//   if (firstDogSelection.intelligence > secondDogSelection.intelligence) {
+//     let message = `${firstDogSelection.breed} is smarted than the ${secondDogSelection.breed}`;
+//     document.getElementById("compare-message").innerHTML = message;
+//   }
+//   if (firstDogSelection.intelligence < secondDogSelection.intelligence) {
+//     let message = `${secondDogSelection.breed} is smarted than the ${firstDogSelection.breed}`;
+//     document.getElementById("compare-message").innerHTML = message;
+//   }
+//   if (firstDogSelection.intelligence == secondDogSelection.intelligence) {
+//     let message = `${secondDogSelection.breed} has the same intelligence as the ${firstDogSelection.breed}`;
+//     document.getElementById("compare-message").innerHTML = message;
+//   }
+// };
