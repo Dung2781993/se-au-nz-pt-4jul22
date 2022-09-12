@@ -1,0 +1,17 @@
+{
+  "name": "axios-training",
+  "version": "1.0.0",
+  "description": "",
+  "main": "axios.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.2.0",
+    "axios": "^0.27.2",
+    "moment": "^2.29.4",
+    "moment-timezone": "^0.5.37"
+  }
+}
