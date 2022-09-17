@@ -1,3 +1,5 @@
+//Input from csv
+
 let library = [
   {
     title: "Bill Gates",
@@ -16,12 +18,15 @@ let library = [
   },
 ];
 
-
-library.forEach((item, index) => {
-    let book = `${library[index].title} by ${library[index].author}`
-    if(library[index].readingStatus) {
-        console.log(`Already read ${book}`);
-    } else {
-        console.log(`You still need to read ${book}`);
-    }
-})
+for (let i = 0; i < library.length; i++) {
+  let bookMessage = `${library[i].title} by ${library[i].author}`;
+  let book = library[i];
+  console.log(book);
+  let readingStatus = book.readingStatus;
+  console.log(readingStatus);
+  if (readingStatus) {
+    console.log(`Already read ${bookMessage}`);
+  } else {
+    console.log(`You still need to read ${bookMessage}`);
+  }
+}
