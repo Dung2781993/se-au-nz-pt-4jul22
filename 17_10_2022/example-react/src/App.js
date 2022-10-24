@@ -1,110 +1,91 @@
-import logo from "./logo.svg";
-import "./App.css";
-import FlipCard from "./components/FlipCard";
+import "./App.scss";
+import Greeting from "./components/Greeting";
+// import {Greeting2} from "./components/Greeting";
+import React from "react";
+import Input from "@mui/material/Input";
+import InputLabel from "@mui/material/InputLabel";
+import { FormControl } from "@mui/material";
+import Button from "@mui/material/Button";
+import Calculator from "./components/Calculator";
 
-// const user = {
-//   firstName: "Joe",
-//   lastName: "Doe",
-//   occupation: "Architect & Engineer",
-//   image: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
-// }
-const listUsers = [
+
+const Greeting2 = React.lazy(() => import('./components/Greeting'));
+
+const listCities = [
   {
     id: 1,
-    firstName: "Joe",
-    lastName: "Doe",
-    occupation: "Architect & Engineer",
-    age: 60,
-    image: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    city: "Melbourne",
   },
   {
     id: 2,
-    firstName: "Joe1",
-    lastName: "Doe1",
-    occupation: "Software Engineer",
-    age: 35,
-    image: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    city: "Melbourne",
   },
   {
     id: 3,
-    firstName: "Joe2",
-    lastName: "Doe2",
-    occupation: "System Enginner",
-    age: 30,
-    image: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    city: "London",
   },
   {
     id: 4,
-    firstName: "Joe3",
-    lastName: "Doe3",
-    occupation: "Intern",
-    age: 20,
-    image: "https://cdn-icons-png.flaticon.com/512/149/149071.png",
+    city: "Sydney",
+  },
+  {
+    id: 5,
+    city: "Newyork",
+  },
+  {
+    id: 6,
+    city: "Brisbane",
+  },
+  {
+    id: 7,
+    city: "Paris",
+  },
+  {
+    id: 8,
+    city: "Perth",
+  },
+  {
+    id: 9,
+    city: "Auckland",
   },
 ];
 
-const Ocupation = () => {
-  return <p>Testing Ocupation</p>;
-};
-
 function App() {
-  const renderFullName = (user) => {
-    return <h1>{user.firstName + " " + user.lastName}</h1>;
+  const [formState, setFormState] = React.useState({
+    isGoing: true,
+    numberOfGuests: 2,
+    id: 1
+  });
+
+  const handleChange = (event) => {
   };
 
-  // const renderFlipCard = (user) => {
-  //   return (
-  //     <div className="flip-card">
-  //       <div className="flip-card-inner">
-  //         <div className="flip-card-front">
-  //           <img src={user.image} alt="Avatar" className="profileLogo"></img>
-  //         </div>
-  //         <div className="flip-card-back">
-  //           <h1>{user.firstName + ' ' + user.lastName}</h1>
-  //           <p>{user.occupation}</p>
-  //         </div>
-  //       </div>
-  //     </div>
-  //   )
-  // }
+  const buttonClick = (event) => {
 
-  /* 
-   * string 
-    number
-    array
-    object 
-    function
-    component 
-  */
+  }
+
+
 
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        {listUsers.map((item) => {
-          return (
-            <FlipCard
-              user={listUsers[0]}
-              testString="Test"
-              testNum={10}
-              testArr={listUsers}
-              renderFullNameMethod={renderFullName}
-              testComponent={Ocupation}
-            />
-          );
-        })}
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Calculator />
+      {/* <label>
+        <input
+          name="isGoing"
+          type="checkbox"
+          checked={formState.isGoing}
+          onChange={handleChange}
+        />
+      </label>
+      <label>
+        <input
+          name="isGoing"
+          type="numberOfGuests"
+          checked={formState.numberOfGuests}
+          onChange={handleChange}
+        />
+      </label>
+      <Button onClick={buttonClick}>Test</Button> */}
     </div>
   );
 }
