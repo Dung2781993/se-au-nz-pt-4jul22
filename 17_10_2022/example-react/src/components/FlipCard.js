@@ -1,5 +1,9 @@
 import React from "react";
 const FlipCard = (props) => {
+  if(!props.user || !props.renderFullNameMethod || !props.testComponent) {
+    return null;
+  }
+
   const user = props.user;
   const fullName = props.renderFullNameMethod(user);
   const Ocupation = props.testComponent;
