@@ -14,7 +14,7 @@ const Creatures = () => {
 
   const fetchAllUsers = async () => {
     setIsLoading(true);
-    fetch("https://reqres.in/api/users?page=0")
+    fetch("http://localhost:3000/customers/getCustomerPurchaseByCustomerId?customerId=1")
       .then((respose) => respose.json())
       .then((respose) => {
         setTimeout(() => {
@@ -40,18 +40,15 @@ const Creatures = () => {
       {users.map((item, index) => (
         <Card key={index} sx={{ maxWidth: 600 }}>
           <CardActionArea>
-            <CardMedia
-              component="img"
-              height="140"
-              image={item.avatar}
-              alt="green iguana"
-            />
             <CardContent>
               <Typography gutterBottom variant="h5" component="div">
                 {`${item.first_name} ${item.last_name}`}
               </Typography>
               <Typography variant="body2" color="text.secondary">
                 {item.email}
+              </Typography>
+              <Typography variant="body3" color="text.secondary">
+                {item.total_payment}
               </Typography>
             </CardContent>
           </CardActionArea>
